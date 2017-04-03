@@ -7,10 +7,10 @@ class PriorityList:
     Constructor: creates myList dictionary and saveFile
     Checks to see if the saveFile exists and imports it if it is found
     '''
-    def __init__(self):
+    def __init__(self, fileName):
         #Dictionary containing item name, priority rating, and number of ratings
         self.myList = {}
-        self.saveFile = 'list.etxt'
+        self.saveFile = fileName
 
         try:
             #import list from list.etxt file
@@ -183,7 +183,7 @@ def menu():
 
 def main():
     #create PriorityList object
-    myList = PriorityList()
+    myList = PriorityList('list.etxt')
     
     #run program until user closes it
     while True:
